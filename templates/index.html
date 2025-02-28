@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Enter your VK ID</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="vk_id">VK ID:</label>
+            <input type="text" class="form-control" id="vk_id" name="vk_id" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if error %}
+    <div class="alert alert-danger mt-3">{{ error }}</div>
+    {% endif %}
+{% endblock %}

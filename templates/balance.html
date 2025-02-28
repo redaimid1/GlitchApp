@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Congratulations!</h1>
+    <p>You have gained {{ clicks }} Glitch.</p>
+    <p>Your new balance is {{ user.balance }} Glitch.</p>
+    <a href="/menu" class="btn btn-primary">Back to Menu</a>
+{% endblock %}

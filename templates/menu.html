@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="text-right">
+        <h1>Glitch Coin</h1>
+    </div>
+    <div class="text-center mt-5">
+        <h2>Balance: <span id="balance">{{ user.balance }}</span> Glitch</h2>
+        <h3>Clicks: <span id="clicks">{{ user.clicks }}</span></h3>
+        <button id="glitch-button" class="btn btn-primary glitch-button">Glitch</button>
+    </div>
+    <nav class="nav mt-5 justify-content-center" style="position: fixed; bottom: 0; width: 100%;">
+        <a class="nav-link" href="/mining">Майнинг</a>
+        <a class="nav-link" href="/profile">Профиль</a>
+        <a class="nav-link" href="/top_balances">Топы</a>
+        <a class="nav-link" href="#">Курс (в разработке)</a>
+    </nav>
+    <script>
+        $(document).ready(function() {
+            $('#glitch-button').click(function() {
+                $.post('/glitch', function(data) {
+                    $('#balance').text(data.balance);
+                    $('#clicks').text(data.clicks);
+                });
+            });
+        });
+    </script>
+{% endblock %}

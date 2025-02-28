@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .glitch-button {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            font-size: 24px;
+            text-align: center;
+            line-height: 300px;
+            margin: 40px auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .glitch-button {
+                width: 225px;
+                height: 225px;
+                line-height: 225px;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); /* Adjust based on your header/footer height */
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Mini App</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Glitch Coin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
